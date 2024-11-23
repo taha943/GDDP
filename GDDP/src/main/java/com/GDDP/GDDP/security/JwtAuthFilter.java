@@ -1,6 +1,8 @@
 package com.GDDP.GDDP.security;
 
 import java.io.IOException;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -10,7 +12,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 @Service
+@RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
+    private  final JwtService jwtService;
     @Override
     protected void doFilterInternal(
 
